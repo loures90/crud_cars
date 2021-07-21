@@ -16,12 +16,14 @@
   "bugs": {
     "url": "https://github.com/loures90/crud_cars/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/loures90/crud_cars#readme",
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^27.0.6",
+    "mongoose": "^5.13.3",
     "nodemon": "^2.0.12"
   }
 }
