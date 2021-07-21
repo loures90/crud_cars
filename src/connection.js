@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const connection =mongoose.connect('mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb',{
+const connection =mongoose.connect('mongodb:localhost:27017/cars',{
     useUnifiedTopology:true,
     useNewUrlParser:true,
     useFindAndModify:false
