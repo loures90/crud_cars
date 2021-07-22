@@ -1,24 +1,31 @@
 
 const filterCarBusiness = async (query, filterCarsDataBase, filterCarRangeDataBase) => {
     try {
-        if (!query.greaterThan && !query.lessThan)
+        if (!query.priceGreaterThan && !query.priceLessThan && !query.yearGreaterThan && !query.yearLessThan)
             return await filterCarsDataBase(query)
         let range = { ...query }
-        if (query.year && query.greaterThan) {
-            range.year = { $gt: Number(query.year) }
-            delete range.greaterThan
+        
+        //if range of year exist it can not have year, same for salePrice.
+        if (query.year && (query.yearGreaterThan || yearLessThan) ||
+            query.salePrice && (query.priceGreaterThan || priceLessThan))
+            throw new Error("Invalid filter")
+
+        // Validating ranges
+        if (query.yearGreaterThan) {
+            range.year = { $gt: Number(query.yearGreaterThan) }
+            delete range.yearGreaterThan
         }
-        if (query.year && query.lessThan){
-            range.year = { $lt: Number(query.year) }
-            delete range.lessThan
+        if (query.yearLessThan) {
+            range.year = { $lt: Number(query.yearLessThan) }
+            delete range.yearLessThan
         }
-        if (query.salePrice && query.greaterThan){
-            range.salePrice = { $gt: Number(query.salePrice) }
-            delete range.greaterThan
+        if (query.priceGreaterThan) {
+            range.salePrice = { $gt: Number(query.priceGreaterThan) }
+            delete range.priceGreaterThan
         }
-        if (query.salePrice && query.lessThan){
-            range.salePrice = { $lt: Number(query.salePrice) }
-            delete range.lessThan
+        if (query.priceLessThan) {
+            range.salePrice = { $lt: Number(query.priceLessThan) }
+            delete range.priceLessThan
         }
         console.log("range", range)
         return await filterCarRangeDataBase(range)

@@ -38,6 +38,6 @@ Content-Type: application/json
 ###
 
 ###
-GET http://localhost:3003/cars/car/?year=2000&lessThan=1&model=lamborghine
+GET http://localhost:3003/cars/car/?yearGreaterThan=2023
 Content-Type: application/json
 ###

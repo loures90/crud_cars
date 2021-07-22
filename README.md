@@ -11,8 +11,9 @@ Make sure you have MongoDB Compass in your machine. Then create a new Schema cal
 
         npm run start
 
-and use Postman or other app to access the api.
+Use Postman or other app to access the api.
 
+#
 ## API
 
 ### Description : Create a new car.
@@ -28,7 +29,7 @@ and use Postman or other app to access the api.
             "transmitionType": "String",
             "salePrice": Number
         }
-### Exemple:
+### example:
 
         POST http://localhost:3003/cars/
         Content-Type: application/json
@@ -57,7 +58,7 @@ The object car created. Like the example below:
             "id": "c736baef-f243-4080-b577-9a43d589c271",
             "__v": 0
         }
-
+#
 ### Description : update a car.
 ### Method: PATCH
 ### Url: http://localhost:3003/cars/:id
@@ -72,7 +73,7 @@ The object car created. Like the example below:
             "salePrice": Number
         }
 ### Params: id (String)
-### Exemple:
+### example:
 
        PATCH http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
         Content-Type: application/json
@@ -102,12 +103,12 @@ The object car updated. Like the example below:
         "__v": 0
         }
 
-
+#
 ### Description : Delete a car by id.
 ### Method: DELETE
 ### Url: http://localhost:3003/cars/:id
 ### Params: id (String)
-### Exemple:
+### example:
 
         DELETE http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
         Content-Type: application/json
@@ -121,12 +122,12 @@ An object describing the deletion. Like the example below:
             "deletedCount": 1
         }
         }
-
+#
 ### Description : Get a car by id.
 ### Method: GET
 ### Url: http://localhost:3003/cars/:id
 ### Params: id (String)
-### Exemple:
+### example:
 
         GET http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
         Content-Type: application/json
@@ -146,11 +147,11 @@ An array with one object car. Like the example below:
             "__v": 0
         }]
 
-
+#
 ### Description : list all saved cars.
 ### Method: GET
 ### Url: http://localhost:3003/cars/
-### Exemple:
+### example:
 
         GET http://localhost:3003/cars/
         Content-Type: application/json
@@ -195,3 +196,44 @@ An array of objects cars. Like the example below:
             "__v": 0
         }
         ]
+
+#
+### Description : Filters of cars
+List and filter cars using query params. 'Year' and 'sale price' can be selected in a range, like year > 2019 and salePrice < 20000, for example.  
+### Method: GET
+### Url: http://localhost:3003/cars/?queryParams
+### Query Params:
+Select the filter property defining it value, for example, 
+
+        http://localhost:3003/cars/?brand=VW&model=Fusca$version=77&year=1977&transmissionType=Manual&salePrice=5000
+
+It will return a car with brand VW, model Fusca, version 77, year 1977, transmissionType Manual and price 5000. For salePrice and year properties you can select a range using the values yearGreaterThan, yearLessThan, priceGreaterThan and priceLessThan, for example:
+
+
+        http://localhost:3003/cars/?priceGreaterThan=5000&yearLessThan=2015
+
+It returns a list of cars with sale price Greater than 5000 and produced before the year of 2015. It does not allows mixing year with yearGreater or yearLessThan, same for salePrice and priceGreaterThan or priceLessThan.
+
+### example:
+
+                GET http://localhost:3003/cars/car/?yearGreaterThan=2000&model=IX35&priceGreaterThan=10000
+                Content-Type: application/json
+
+### Response:
+An array of objects cars. Like the example below:
+
+
+                [
+                {
+                "_id": "60f8d11fe766a3028f057690",
+                "brand": "Hyunday",
+                "model": "IX35",
+                "version": "Prata",
+                "year": 2022,
+                "km": 1000,
+                "transmitionType": "Automático",
+                "salePrice": 900000,
+                "id": "cfd0a1d5-855a-40ea-a22b-f8bed261fdce",
+                "__v": 0
+                }
+                ]
