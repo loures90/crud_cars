@@ -8,7 +8,7 @@ Content-Type: application/json
 {
     "brand": "VW",
     "model": "Gol",
-    "version": "2021",
+    "version": "1998",
     "year": 2021,
     "km": 10000,
     "transmitionType": "Manual",
@@ -38,6 +38,6 @@ Content-Type: application/json
 ###
 
 ###
-GET http://localhost:3003/cars/car/?model=Fusca
+GET http://localhost:3003/cars/car/?year=2000&lessThan=1&model=lamborghine
 Content-Type: application/json
 ###
