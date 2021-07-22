@@ -1,4 +1,4 @@
-GET http://localhost:3003/cars/4343b3bd-f12b-4a0d-beca-86fe77976ab6
+GET http://localhost:3003/cars/cfd0a1d5-855a-40ea-a22b-f8bed261fdce
 Content-Type: application/json
 ###
 
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 ###
 
-PATCH http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
+PATCH http://localhost:3003/cars/cfd0a1d5-855a-40ea-a22b-f8bed261fdce
 Content-Type: application/json
 
 {
@@ -33,6 +33,11 @@ GET http://localhost:3003/cars/
 Content-Type: application/json
 ###
 
-DELETE http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
+DELETE http://localhost:3003/cars/4343b3bd-f12b-4a0d-beca-86fe77976ab6
+Content-Type: application/json
+###
+
+###
+GET http://localhost:3003/cars/car/?model=Fusca
 Content-Type: application/json
 ###
