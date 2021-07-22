@@ -1,3 +1,38 @@
-GET http://localhost:3003/
+GET http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
+Content-Type: application/json
+###
+
+POST http://localhost:3003/cars/
+Content-Type: application/json
+
+{
+    "brand": "VW",
+    "model": "Gol",
+    "version": "2021",
+    "year": 2021,
+    "km": 10000,
+    "transmitionType": "Manual",
+    "salePrice": 45000.00
+}
+###
+
+PATCH http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
+Content-Type: application/json
+
+{
+    "brand": "Lamborghine",
+    "model": "IX35",
+    "version": "Prata",
+    "year": 2022,
+    "km": 1000,
+    "transmitionType": "Automático",
+    "salePrice": 900000.00
+}
+###
+GET http://localhost:3003/cars/
+Content-Type: application/json
+###
+
+DELETE http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
 Content-Type: application/json
 ###

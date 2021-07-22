@@ -1,14 +1,15 @@
-import connection from "../connection";
+import mongoose from "mongoose";
 
-const DataSchema = new connection.Schema({
+const DataSchema = new mongoose.Schema({
     id:String,
     brand: String,
     model: String,
     version: String,
-    year: Integer,
-    km: Integer,
-    transmitionType: String
+    year: Number,
+    km: Number,
+    transmitionType: String,
+    salePrice: Number
 })
 
-const cars = connection.model('cars', DataSchema)
+const cars = mongoose.model('cars', DataSchema)
 export default cars;

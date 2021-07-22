@@ -1,10 +1,13 @@
 
-const getCarBusiness = async(id,getCarDataBase, generateToken) =>{
+const getCarBusiness = async (id, getCarsDataBase, getCarByIdDataBase) => {
     try {
-        const result = await getCarDataBase(id)
-        return result  
+        if (id)
+            return await getCarByIdDataBase(id)
+        else
+            return await getCarsDataBase()
+
     } catch (error) {
-        throw ({error: error.message})
+        throw  error
     }
 }
 export default getCarBusiness;
