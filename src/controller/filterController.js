@@ -1,6 +1,6 @@
-import filterCarBusiness from "../business/filterBusiness.js"
-import filterCarDataBase from "../database/filterData.js"
-import filterCarRangeDataBase from "../database/filterRangeData.js"
+const filterCarBusiness = require("../business/filterBusiness")
+const filterCarDataBase = require("../database/filterData")
+const filterCarRangeDataBase = require("../database/filterRangeData")
 
 const filterCarController = async (req, res) => {
     try {
@@ -11,4 +11,4 @@ const filterCarController = async (req, res) => {
         res.status(400).send({ error: error.message })
     }
 }
-export default filterCarController;
+module.exports = filterCarController;

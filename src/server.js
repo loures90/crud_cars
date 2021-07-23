@@ -1,9 +1,8 @@
-import app from './app.js'
-import {carsRoutes} from './routes/carsRoutes.js'
-import mongoose from 'mongoose'
+const app = require('./app')
+const carsRoutes = require('./routes/carsRoutes')
+const mongoose = require('mongoose')
 
 app.use('/cars', carsRoutes)
-
 
 mongoose.connect('mongodb://localhost:27017/cars',{
     useUnifiedTopology:true,

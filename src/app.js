@@ -1,7 +1,7 @@
-import express from "express";
-import cors from "cors";
-import path from 'path';
-import cookieParser from 'cookie-parser';
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
+const cookieParser = require('cookie-parser')
 
 const app = express();
 
@@ -17,4 +17,4 @@ const server = app.listen(process.env.PORT || 3003, () => {
     }
 });
 
-export default app
+module.exports = app;

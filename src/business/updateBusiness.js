@@ -12,4 +12,4 @@ const updateCarBusiness = async (id,car, updateCarDataBase, generateToken) => {
         throw error
     }
 }
-export default updateCarBusiness;
+module.exports = updateCarBusiness;

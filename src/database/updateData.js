@@ -1,4 +1,5 @@
-import cars from '../model/cars.js'
+const cars = require('../model/cars.js')
+
 const updateCarDataBase = async (id, car) => {
     try {
         const result = await cars.findOneAndUpdate({id:id }, car)
@@ -7,4 +8,4 @@ const updateCarDataBase = async (id, car) => {
         throw err
     }
 }
-export default updateCarDataBase
+module.exports = updateCarDataBase;

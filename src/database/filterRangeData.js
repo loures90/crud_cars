@@ -1,4 +1,4 @@
-import cars from '../model/cars.js'
+const cars = require('../model/cars.js')
 
 const filterCarRangeDataBase = async(query) => { 
     try {
@@ -9,4 +9,4 @@ const filterCarRangeDataBase = async(query) => {
         throw err
     }
 }
-export default filterCarRangeDataBase
+module.exports = filterCarRangeDataBase;

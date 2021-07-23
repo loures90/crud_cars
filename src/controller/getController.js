@@ -1,6 +1,6 @@
-import getCarBusiness from "../business/getBusiness.js"
-import getCarsDataBase from "../database/getData.js"
-import getCarByIdDataBase from "../database/getCarByIdData.js"
+const getCarBusiness = require("../business/getBusiness")
+const getCarsDataBase = require("../database/getData")
+const getCarByIdDataBase = require("../database/getCarByIdData")
 
 const getCarController = async (req, res) => {
     try {
@@ -11,4 +11,4 @@ const getCarController = async (req, res) => {
         res.status(400).send({ error: error.message })
     }
 }
-export default getCarController;
+module.exports = getCarController;

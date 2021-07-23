@@ -1,4 +1,5 @@
-import cars from '../model/cars.js'
+const cars = require('../model/cars.js')
+
 const getCarByIdDataBase = async(id) => { 
     try {
         const result = await cars.find({id:id})
@@ -7,4 +8,5 @@ const getCarByIdDataBase = async(id) => {
         throw err
     }
 }
-export default getCarByIdDataBase
+
+module.exports = getCarByIdDataBase;

@@ -1,14 +1,14 @@
-import saveCarBusiness from "../business/saveBusiness.js"
-import saveCarDataBase from "../database/saveData.js"
-import idGenerator from "../services/idGenerator.js"
+const saveCarDataBase = require("../database/saveData")
+const saveCarBusiness = require("../business/saveBusiness")
+const idGenerator = require("../services/idGenerator")
 
-const saveCarController = async(req,res) =>{
+const saveCarController = async (req, res) => {
     try {
         const car = req.body
-        const result = await saveCarBusiness(car,saveCarDataBase, idGenerator)
-        res.status(200).send( result)
+        const result = await saveCarBusiness(car, saveCarDataBase, idGenerator)
+        res.status(200).send(result)
     } catch (error) {
-        res.status(400).send({error: error.message})
+        res.status(400).send({ error: error.message })
     }
 }
-export default saveCarController;
+module.exports = saveCarController;

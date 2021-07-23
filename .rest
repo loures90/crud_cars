@@ -38,6 +38,6 @@ Content-Type: application/json
 ###
 
 ###
-GET http://localhost:3003/cars/car/?yearGreaterThan=2023
+GET http://localhost:3003/cars/car/?yearGreaterThan=2020
 Content-Type: application/json
 ###

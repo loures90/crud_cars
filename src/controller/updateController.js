@@ -1,6 +1,6 @@
-import updateCarBusiness from "../business/updateBusiness.js"
-import idGenerator from "../services/idGenerator.js"
-import updateCarDataBase from "../database/updateData.js"
+const updateCarBusiness = require("../business/updateBusiness")
+const idGenerator = require("../services/idGenerator")
+const updateCarDataBase = require("../database/updateData")
 
 const updateCarController = async (req, res) => {
     try {
@@ -12,4 +12,4 @@ const updateCarController = async (req, res) => {
         res.status(400).send({ error: error.message })
     }
 }
-export default updateCarController;
+module.exports = updateCarController;

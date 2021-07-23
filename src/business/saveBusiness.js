@@ -11,4 +11,4 @@ const saveCarBusiness = async (car, saveCarDataBase, idGenerator) => {
         throw error
     }
 }
-export default saveCarBusiness;
+module.exports =  saveCarBusiness;

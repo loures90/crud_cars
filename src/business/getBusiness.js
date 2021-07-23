@@ -10,4 +10,4 @@ const getCarBusiness = async (id, getCarsDataBase, getCarByIdDataBase) => {
         throw  error
     }
 }
-export default getCarBusiness;
+module.exports =  getCarBusiness;

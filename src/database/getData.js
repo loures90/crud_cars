@@ -1,6 +1,6 @@
-import cars from '../model/cars.js'
+const cars = require('../model/cars.js')
 
-const getCarDataBase = async() => { 
+const getCarDataBase = async () => {
     try {
         const result = await cars.find()
         return result
@@ -8,4 +8,4 @@ const getCarDataBase = async() => {
         throw err
     }
 }
-export default getCarDataBase
+module.exports = getCarDataBase;

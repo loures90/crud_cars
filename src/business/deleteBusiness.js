@@ -9,4 +9,4 @@ const deleteCarBusiness = async(id,deleteCarDataBase, generateToken) =>{
         throw ({error: error.message})
     }
 }
-export default deleteCarBusiness;
+module.exports = deleteCarBusiness;

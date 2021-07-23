@@ -1,5 +1,6 @@
-import cars from '../model/cars.js'
-const saveCarDataBase = async(car) => { 
+const cars = require('../model/cars.js')
+
+const saveCarDataBase = async (car) => {
     try {
         const result = await cars.create(car)
         return result
@@ -7,4 +8,5 @@ const saveCarDataBase = async(car) => {
         throw err
     }
 }
-export default saveCarDataBase
+
+module.exports = saveCarDataBase;
