@@ -1,5 +1,5 @@
 # crud_cars
-This is a CRUD of a table of cars. The API is made with NodeJS and MongoDB, frameworks Express, Mongoose and jest. It does not have authentication.
+This is a CRUD of a selection of cars. The API is made with NodeJS and MongoDB, frameworks Express, Mongoose and jest. It does not have authentication.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Make sure you have MongoDB Compass in your machine. Then create a new Schema cal
 
         npm run start
 
-Use Postman or other app to access the api.
+Use Postman or other app to access the API.
 
 #
 ## API
@@ -44,7 +44,7 @@ Use Postman or other app to access the api.
             "salePrice": 45000.00
         }
 ### Response:
-The object car created. Like the example below:
+Object car created. Like the example below:
 
         {
             "_id": "60f8e437bd6239209084d2b2",
@@ -88,7 +88,7 @@ The object car created. Like the example below:
             "salePrice": 900000.00
         }
 ### Response:
-The object car updated. Like the example below:
+Object car updated. Like the example below:
 
         {
         "_id": "60f8d11fe766a3028f057690",
@@ -113,7 +113,7 @@ The object car updated. Like the example below:
         DELETE http://localhost:3003/cars/e362592b-7628-4b2d-b9e0-af3c239a197e
         Content-Type: application/json
 ### Response:
-An object describing the deletion. Like the example below:
+The object describing the deletion. Like the example below:
 
         {
         "message": {
@@ -199,20 +199,28 @@ An array of objects cars. Like the example below:
 
 #
 ### Description : Filters of cars
-List and filter cars using query params. 'Year' and 'sale price' can be selected in a range, like year > 2019 and salePrice < 20000, for example.  
+
+List and filter cars using query params. 
+The properties 'year' and 'salePrice' can be selected in a range, like year > 2019 and salePrice < 20000, for example.  
+
 ### Method: GET
+
 ### Url: http://localhost:3003/cars/?queryParams
+
 ### Query Params:
-Select the filter property defining it value, for example, 
+
+Select the filter properties defining it values, for example, 
 
         http://localhost:3003/cars/?brand=VW&model=Fusca$version=77&year=1977&transmissionType=Manual&salePrice=5000
 
-It will return a car with brand VW, model Fusca, version 77, year 1977, transmissionType Manual and price 5000. For salePrice and year properties you can select a range using the values yearGreaterThan, yearLessThan, priceGreaterThan and priceLessThan, for example:
+It will return a list of cars with brand VW, model Fusca, version 77, year 1977, transmissionType Manual and price 5000. 
+For salePrice and year properties you can select a range using the values yearGreaterThan, yearLessThan, priceGreaterThan and priceLessThan, for example:
 
 
         http://localhost:3003/cars/?priceGreaterThan=5000&yearLessThan=2015
 
-It returns a list of cars with sale price Greater than 5000 and produced before the year of 2015. It does not allows mixing year with yearGreater or yearLessThan, same for salePrice and priceGreaterThan or priceLessThan.
+It returns a list of cars with sale price greater than 5000 and produced before the year 2015. 
+It does not allows mixing params 'year' with params 'yearGreater' or 'yearLessThan', same rule applies for 'salePrice' with 'priceGreaterThan' or 'priceLessThan'.
 
 ### example:
 
